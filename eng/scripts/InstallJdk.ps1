@@ -25,3 +25,5 @@ mkdir (split-path -parent $env:JAVA_HOME) -ea ignore | out-null
 Write-Host "Installing JDK to $env:JAVA_HOME"
 Move-Item "$tempDir/jdk/jdk-${jdkVersion}" $env:JAVA_HOME
 Write-Host "Done installing JDK to $env:JAVA_HOME"
+Write-Host "##vso[task.prependpath]$env:JAVA_HOME;"
+Write-Host $env:Path;
